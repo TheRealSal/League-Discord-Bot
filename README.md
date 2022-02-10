@@ -6,7 +6,12 @@ Features:
   * Access time spent on League of Legends using information on wol.gg
   * Access runes for each champion using information scraped from op.gg
   
-  
+Commands: 
+  * -ping Pings to check if bot is working
+  * -timespent "Summoner Name" Checks amount of time spent on league of legends
+  * -runes "Champion Name" Returns an image of the runes specific to the selected champion
+
+
 Installation:
   1. Clone file and run npm install -y
                         npm install puppeteer
