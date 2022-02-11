@@ -11,7 +11,8 @@ module.exports = {
         // Sends the message to the discord channel
         const runes_embed = new Discord.MessageEmbed()
         .setImage('https://raw.githubusercontent.com/TheRealSal/ScraperImages/main/'+ name +'runes.png');
-        message.channel.send(runes_embed);
+        console.log('https://raw.githubusercontent.com/TheRealSal/ScraperImages/main/'+ name +'runes.png')
+        message.channel.send({ embeds: [runes_embed] });
             
     }
     

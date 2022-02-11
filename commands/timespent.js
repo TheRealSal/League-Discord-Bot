@@ -5,12 +5,20 @@ const puppeteer = require("puppeteer");
 async function scrapeTime(url){
 const browser = await puppeteer.launch({
     headless: true,
-    /*args: minimal_args*/
+    args: minimal_args
   });
 const page = await browser.newPage();
 console.log('Opening website...');
-await page.goto(url);
-console.log('Opened website successfully');
+try{
+  await page.goto(url);
+  console.log('Opened website successfully');
+}
+catch(e)
+{
+  console.log('Couldnt open website')
+  return "Timed out, please try again later";
+  break;
+}
 
 const [el] = await page.$x('//*[@id="time-days"]/p');
 const txt = await el.getProperty('textContent');
@@ -19,6 +27,7 @@ const rawTxt = await txt.jsonValue();
 console.log(rawTxt);
 
 return rawTxt;
+
 
 browser.close();
 
@@ -35,7 +44,7 @@ module.exports = {
     }
 }
 
-/*const minimal_args = [
+const minimal_args = [
     '--autoplay-policy=user-gesture-required',
     '--disable-background-networking',
     '--disable-background-timer-throttling',
@@ -72,4 +81,4 @@ module.exports = {
     '--use-gl=swiftshader',
     '--use-mock-keychain',
   ];
-  */
+  

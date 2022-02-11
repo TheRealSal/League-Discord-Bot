@@ -1,6 +1,12 @@
+//const Discord = require('discord.js');
+
+//const client = new Discord.Client();
+
 const Discord = require('discord.js');
 
-const client = new Discord.Client();
+const { Client, Intents } = require('discord.js');
+
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const prefix = '-';
 
@@ -20,7 +26,7 @@ client.once('ready', () => {
 } )
 
 // Message handler
-client.on('message', message => {
+client.on('messageCreate', message => {
     if(!message.content.startsWith(prefix) || message.author.bot)    return;
 
     const args = message.content.slice(prefix.length).split(" ");
@@ -40,4 +46,4 @@ client.on('message', message => {
     }
 });
 
-client.login('//Token');
+client.login('OTM0NTY4OTMzMjg4MTg1OTU2.Yex_JQ.jabDAuY9jdv-Hu5NW6rvZggTk1o');
