@@ -17,7 +17,6 @@ catch(e)
 {
   console.log('Couldnt open website')
   return "Timed out, please try again later";
-  break;
 }
 
 const [el] = await page.$x('//*[@id="time-days"]/p');
@@ -38,9 +37,7 @@ module.exports = {
     description : "Shows amount of time spent playing league of legends",
     execute(message, args){
         console.log(args);
-        scrapeTime('https://wol.gg/stats/euw/' + args[0] + "/").then(result => message.channel.send(args[0] + " has spent " + result + " on League Of Legends!"));
-        // https://wol.gg/stats/euw/"summoner name"/
-        //message.channel.send(args[0] + " has spent " + result + " on League Of Legends");
+        scrapeTime('https://wol.gg/stats/' + args[1] +'/' + args[0] + "/").then(result => message.channel.send(args[0] + " has spent " + result + " on League Of Legends!"));
     }
 }
 

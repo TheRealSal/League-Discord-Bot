@@ -1,6 +1,3 @@
-//const Discord = require('discord.js');
-
-//const client = new Discord.Client();
 
 const Discord = require('discord.js');
 
@@ -35,15 +32,15 @@ client.on('messageCreate', message => {
     if(command === 'ping'){
         client.commands.get('ping').execute(message,args);
     }
-    else if(command === 'full'){
-        client.commands.get('champs').execute(message,args);
-    }
     else if(command === 'timespent'){
         client.commands.get('timespent').execute(message,args);
     }
     else if(command === 'runes'){
         client.commands.get('runes').execute(message,args, Discord);
     }
+    else if(command === 'help'){
+        client.commands.get('help').execute(message,args);
+    }
 });
 
-client.login('//Token');
+client.login('token');

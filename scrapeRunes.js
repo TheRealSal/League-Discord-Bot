@@ -63,7 +63,6 @@ await element.screenshot({path: 'Images/' + (args +'runes.png')});
 
 browser.close();
 
-//return (args[0] +' runes.png');
 
 }
 }
@@ -93,16 +92,9 @@ function sleep(ms) {
 }
 
 
-//for (let i = 150; i < names.length ; i++) {
-/*  console.log('Starting ahri');
-  scrapeRunes('ahri');
-  console.log('Finished ahri');
+for (let i = 150; i < names.length ; i++) {
+  scrapeRunes(i);
   init();
-  console.log('starting irelia');
-  scrapeRunes('irelia');
-  
-  */
- scrapeRunes('skarner');
-//}
+}
 
 // node scrapeRunes.js
