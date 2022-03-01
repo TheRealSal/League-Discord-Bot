@@ -30,7 +30,7 @@ client.on('messageCreate', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'ping'){
-        client.commands.get('ping').execute(message,args);
+        message.channel.send('pong!');
     }
     else if(command === 'timespent'){
         client.commands.get('timespent').execute(message,args);
